@@ -1,23 +1,82 @@
 <html>
     <head>
 
+        <script>
+            let card1="";
+            let card2="";
+            let card1id="";
+            let card2id="";            
+            let nbtir=0;
+            function turncard(clicked_id)
+            {
+                let id = clicked_id;
+                switch (id){
+                    case "1":    
+                        document.getElementById('1').src='lion.jpg';
+                        break;
+                    case "2":
+                        document.getElementById('2').src='duck2.jfif';
+                        break;
+                    case "3":
+                        document.getElementById('3').src='poisson.jfif';
+                        break;
+                    case "4":
+                        document.getElementById('4').src='chat.jfif';
+                        break;
+                    case "5":
+                        document.getElementById('5').src='duck2.jfif';
+                        break;
+                    default:
+                        break;
+                
+                }
+                if (nbtir==0){
+                    nbtir ++;
+                    card1=document.getElementById(id).src;
+                    card1id=id;
+                }
+                else{
+                    card2=document.getElementById(id).src;
+                    card2id=id;
+                    setTimeout(verify, 2000);
+                }
+
+            }
+            function verify()
+            {
+                if (card1!=card2) 
+              {
+
+                document.getElementById(card1id).src="arriere.jfif";
+                document.getElementById(card2id).src="arriere.jfif";
+                nbtir=0;
+                card1id=0;
+                card2id=0;
+                card1id="";
+                card2id="";
+
+              }  
+
+            }
+        </script>
+
     </head>
     <body>
 
-        <button onclick="document.getElementById('myImage').src='lion.jpg'">
-            <img src="arriere.jfif" height ="80" width="100" id="myImage"/></button>
         
-        <button onclick="document.getElementById('image').src='duck.jfif'">
-            <img src="arriere.jfif" height ="80" width="100" id="image"/></button> 
+        <img src="arriere.jfif" height ="80" width="100"  onclick="turncard(this.id)" id="1"  />
         
-        <button onclick="document.getElementById('img').src='poisson.jfif'">
-            <img src="arriere.jfif" height ="80" width="100" id="img"/></button>
+        
+        <img src="arriere.jfif" height ="80" width="100"  onclick="turncard(this.id)" id="2"/>
+        
+        
+            <img src="arriere.jfif" height ="80" width="100"  onclick="turncard(this.id)" id="3"/>
 
-        <button onclick="document.getElementById('li').src='lion2.jpg'">
-                <img src="arriere.jfif" height ="80" width="100" id="li"/></button> 
+        
+                <img src="arriere.jfif" height ="80" width="100" onclick="turncard(this.id)" id="4"/>
          
-        <br> <button onclick="document.getElementById('ch').src='chat.jfif'">
-            <img src="arriere.jfif" height ="80" width="100" id="ch"/></button>
+        <br>
+            <img src="arriere.jfif" height ="80" width="100" onclick="turncard(this.id)" id="5"/>
         
         <button onclick="document.getElementById('pois').src='poisson2.jfif'">
             <img src="arriere.jfif" height ="80" width="100" id="pois"/></button>   
