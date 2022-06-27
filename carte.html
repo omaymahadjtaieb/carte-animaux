@@ -24,10 +24,10 @@
                         document.getElementById('4').src='chat.jfif';
                         break;
                     case "5":
-                        document.getElementById('5').src='lion2.jpg';
+                        document.getElementById('5').src='lion.jpg';
                         break;
                     case "6":
-                        document.getElementById('6').src='poisson2.jfif';
+                        document.getElementById('6').src='poisson.jfif';
                         break;
                     case "7":
                         document.getElementById('7').src='lapin.jfif';
@@ -36,16 +36,16 @@
                         document.getElementById('8').src='tortue.png';
                         break;
                     case "9":
-                        document.getElementById('9').src='lapin2.jfif';
+                        document.getElementById('9').src='lapin.jfif';
                         break;
                     case "10":
-                        document.getElementById('10').src='tortue2.png';
+                        document.getElementById('10').src='tortue.png';
                         break;
                     case "11":
-                        document.getElementById('11').src='chat2.jfif';
+                        document.getElementById('11').src='chat.jfif';
                         break;
                     case "12":
-                        document.getElementById('12').src='duck2.jfif';
+                        document.getElementById('12').src='duck.jfif';
                         break;  
                         default:
                         break;
@@ -65,7 +65,9 @@
             }
             function verify()
             {
-                if (card1!=card2) 
+                console.log("card 1 = " + card1);
+                console.log("card 2 = " + card2);
+                if (card1!==card2) 
               {
 
                 document.getElementById(card1id).src="arriere.jfif";
@@ -77,6 +79,9 @@
                 card2id="";
 
               }  
+            else{
+                nbtir=0;
+            }
 
             }
         </script>
